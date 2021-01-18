@@ -1,0 +1,36 @@
+=> Download Docker desktop and kernel
+
+=> Computer Management -> Local user and groups -> Groups -> docker-users
+
+=> Create Dockerfile with the following command
+
+FROM node:12-slim
+WORKDIR /profoundjs
+COPY package.json /profoundjs
+RUN npm install
+COPY . /profoundjs
+CMD ["node","start"]
+ 
+
+Command in nodeJS
+
+docker build -t node-docker-tutorial .
+
+docker run -it -p 3000:8081 node-docker-tutorial
+
+docker -ps
+
+
+
+Reference links
+
+
+https://tudip.com/blog-post/how-to-create-microservice-in-nodejs-with-docker/
+
+https://youtu.be/CsWoMpK3EtE
+
+
+
+
+
+
